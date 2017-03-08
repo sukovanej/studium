@@ -1,0 +1,2 @@
+# studium
+Protokoly, zápisky, skripta,..
