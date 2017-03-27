@@ -1,0 +1,240 @@
+% Hlavicka pro protokoly z fyzikalniho praktika.
+% Verze pro: LaTeX
+% Verze hlavicky: 22. 2. 2007
+% Autor: Ustav fyziky kondenzovanych latek
+% Ke stazeni: www.physics.muni.cz/ufkl/Vyuka/
+% Licence: volne k pouziti, nejlepe k vcasnemu odevzdani protokolu z Vaseho mereni.
+
+\documentclass[a4paper,11pt]{article}
+
+% Kodovani (cestiny) v dokumentu: cp1250
+% \usepackage[cp1250]{inputenc}	% Omezena stredoevropska kodova stranka, pouze MSW.
+\usepackage[utf8]{inputenc}	% Doporucujeme pouzivat UTF-8 (unicode).
+
+%%% Nemente:
+\usepackage[margin=2cm]{geometry}
+\newtoks\jmenopraktika \newtoks\jmeno \newtoks\datum
+\newtoks\obor \newtoks\skupina \newtoks\rocnik \newtoks\semestr
+\newtoks\cisloulohy \newtoks\jmenoulohy
+\newtoks\tlak \newtoks\teplota \newtoks\vlhkost
+%%% Nemente - konec.
+
+
+%%%%%%%%%%% Doplnte pozadovane polozky:
+
+\jmenopraktika={Fyzikální praktikum 1}  % nahradte jmenem vaseho predmetu
+\jmeno={Milan Suk}            % nahradte jmenem mericiho
+\datum={2. března 2017}        % nahradte datem mereni ulohy
+\obor={F}                     % nahradte zkratkou vami studovaneho oboru
+\skupina={ČT 8:00}            % nahradte dobou vyuky vasi seminarni skupiny
+\rocnik={I}                  % nahradte rocnikem, ve kterem studujete
+\semestr={II}                 % nahradte semestrem, ve kterem studujete
+
+\cisloulohy={1}               % nahradte cislem merene ulohy
+\jmenoulohy={Měření hustosty válečku} % nahradte jmenem merene ulohy
+
+\tlak={97,9}                   % nahradte tlakem pri mereni (v hPa)
+\teplota={21,4}               % nahradte teplotou pri mereni (ve stupnich Celsia)
+\vlhkost={40}               % nahradte vlhkosti vzduchu pri mereni (v %)
+
+%%%%%%%%%%% Konec pozadovanych polozek.
+
+
+%%%%%%%%%%% Uzitecne balicky:
+\usepackage[czech]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{indentfirst}
+
+%%%%%% Zamezeni parchantu:
+\widowpenalty 10000 \clubpenalty 10000 \displaywidowpenalty 10000
+%%%%%% Parametry pro moznost vsazeni vetsiho poctu obrazku na stranku
+\setcounter{topnumber}{3}	  % max. pocet floatu nahore (specifikace t)
+\setcounter{bottomnumber}{3}	  % max. pocet floatu dole (specifikace b)
+\setcounter{totalnumber}{6}	  % max. pocet floatu na strance celkem
+\renewcommand\topfraction{0.9}	  % max podil stranky pro floaty nahore
+\renewcommand\bottomfraction{0.9} % max podil stranky pro floaty dole
+\renewcommand\textfraction{0.1}	  % min podil stranky, ktery musi obsahovat text
+\intextsep=8mm \textfloatsep=8mm  %\intextsep pro ulozeni [h] floatu a \textfloatsep pro [b] or [t]
+
+% Tecky za cisly sekci:
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
+% Jednopismenna mezera mezi cislem a nazvem kapitoly:
+\makeatletter \def\@seccntformat#1{\csname the#1\endcsname\hspace{1ex}} \makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zacatek dokumentu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Nemente:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+
+{
+\begin{center}
+\sf 
+{\Large Ústav fyzikální elektroniky Přírodovědecké fakulty Masarykovy univerzity} \\
+\bigskip
+{\huge \bfseries FYZIKÁLNÍ PRAKTIKUM} \\
+\bigskip
+{\Large \the\jmenopraktika}
+\end{center}
+
+\bigskip
+
+\sf
+\noindent
+\setlength{\arrayrulewidth}{1pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l l}
+\large {\bfseries Zpracoval:}  \the\jmeno & \large  {\bfseries Naměřeno:} \the\datum\\[2mm]
+\large  {\bfseries Obor:} \the\obor  \hspace{40mm}  {\bfseries Skupina:} \the\skupina %
+%{\bfseries Ročník:} \the\rocnik \hspace{5mm} {\bfseries Semestr:} \the\semestr  
+&\large {\bfseries Testováno:}\\
+\\
+\hline
+\end{tabular*}
+}
+
+\bigskip
+
+{
+\sf
+\noindent \begin{tabular}{p{3cm} p{0.6\textwidth}}
+\Large  Úloha č. {\bfseries \the\cisloulohy:} \par
+\smallskip
+$T=\the\teplota$~$^\circ$C \par
+$p=\the\tlak$~hPa \par
+$\varphi=\the\vlhkost$~\%
+&\Large \bfseries \the\jmenoulohy  \\[2mm]
+\end{tabular}
+}
+
+\vskip1cm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% konec Nemente.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zacatek textu vlastniho protokolu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Úvod}
+
+    \paragraph{} Cílem toho měření je zjistit hustotu válečku s válcovým výřezem. 
+    Hustota má být vypočtena pomocí měření jeho výšky, vnitřního a vnějšího průměru, a
+    jeho hmotnosti.
+
+    \paragraph{} Objem válečku určím pomocí změřené výšky $h$, vnitřního poloměru $r$ a
+    vnějšího poloměr $R$ pomocí rovnice
+
+    $$V = h \pi (R^{2} - r^{2})$$
+
+    \paragraph{} Pak se změřenou hmotností $m$ lze určit hustota válečku jako
+
+    $$\rho = \frac{m}{h \pi (R^{2} - r^{2})}$$
+
+    \subsection{Zpracování chyb měření}
+
+        \paragraph{} Nejistotu měření určím ze \textit{Zákona šíření nejistoty} jako
+
+        $$u(\rho) = \sqrt{
+          \left(\frac{\partial \rho}{\partial m}\right)^{2} \cdot u(m)^{2}
+        + \left(\frac{\partial \rho}{\partial r}\right)^{2} \cdot u(r)^{2} 
+        + \left(\frac{\partial \rho}{\partial R}\right)^{2} \cdot u(R)^{2}
+        + \left(\frac{\partial \rho}{\partial h}\right)^{2} \cdot u(h)^{2}
+        }$$
+
+        konkrétně potom
+
+        $$u(\rho) = \sqrt{
+              \left(\frac{u(m)}{h \pi \left(R^{2} - r^{2}\right)}\right)^{2}
+            + \left(\frac{2mr \cdot u(R)}{h \pi \left(R^{2} - r^{2}\right)^{2}}\right)^{2}
+            + \left(\frac{2mR \cdot u(r)}{h \pi \left(R^{2} - r^{2}\right)^{2}}\right)^{2}
+            + \left(\frac{m \cdot u(h)}{h^{2} \pi \left(R^{2} - r^{2}\right)}\right)^{2}
+        }$$
+
+\section{Postup měření}
+
+    \paragraph{} Pomocí posuvného měřidla jsme nejdříve změřili vnitřní průměr $2r$ a vnější průměr 
+    válečku $2R$. Poté jsme pomocí mikrometru změřili výšku válečku $h$ a nakonec pomocí laboratorních vah jsme 
+    určili hmotnost válečku $m$.
+
+\section{Výsledky}
+
+    \subsection{Měření průměrů válce}
+
+    \begin{center}
+        \begin{tabular}{ | l | l || l | l | }
+            \hline
+            $2R$ $[cm]$ & $R$ $[cm]$ & $2r$ $[cm]$ & $r$ $[cm]$ \\ \hline
+            3.992 & 1.996 & 1.008 & 0.504 \\ \hline
+            3.992 & 1.996 & 1.008 & 0.504 \\ \hline
+            3.990 & 1.995 & 0.996 & 0.498 \\ \hline
+            3.992 & 1.996 & 1.006 & 0.502 \\ \hline
+            3.990 & 1.995 & 1.008 & 0.504 \\ \hline
+            3.992 & 1.996 & 1.002 & 0.501 \\ \hline
+            3.992 & 1.996 & 1.006 & 0.503 \\ \hline
+            3.992 & 1.996 & 1.000 & 0.500 \\ \hline
+            3.992 & 1.996 & 1.008 & 0.504 \\ \hline
+            3.994 & 1.997 & 1.010 & 0.505 \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+    \subsection{Měření výšky válce}
+
+    \begin{center}
+        \begin{tabular}{ | l | }
+            \hline
+            $h$ $[cm]$ \\ \hline
+            1.534 \\ \hline
+            1.530 \\ \hline
+            1.528 \\ \hline
+            1.524 \\ \hline
+            1.552 \\ \hline
+            1.546 \\ \hline
+            1.548 \\ \hline
+            1.548 \\ \hline
+            1.554 \\ \hline
+            1.550 \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+    $$\overline{m} = 159.096g$$
+
+    \paragraph{} Průměrné hodnoty naměřených veličin a jejich nejistoty jsou následující:
+
+    $$m = (159.096 \pm 0.001)g$$
+    $$r = (0.503 \pm 0.001)cm$$
+    $$R = (1.996 \pm 0.001)cm$$
+    $$h = (1.541 \pm 0.004)cm$$
+
+    \paragraph{} Po dosazení je výsledná hustota
+
+    $$\rho = \left(8.81 \pm 0.02 \right) g \cdot cm^{-3}$$
+
+\section{Zhodnocení měření, závěr}
+
+    \paragraph{} Podle zjištěné hustoty byl neznámý materiál pravděpodobně \textbf{mosaz}, jehož tabulková
+    hodnota hustoty se pohybuje v rozmezí $8.4 - 8.7$ $g \cdot cm^{-3}$. Odchylka od této hodnoty bude 
+    pravděpodobně způsobena nedokonalým tvarem, o kterém se předpokládalo, že se jedná o válec. Měření by
+    bylo možné zlepšit přímým měřením objemu, ponořením do kapaliny a měřením jejího objemu v odměrném válci.
+
+\end{document}
+
+\end{document}
+
