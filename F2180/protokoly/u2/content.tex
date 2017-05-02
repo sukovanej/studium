@@ -1,4 +1,3 @@
-% Hlavicka pro protokoly z fyzikalniho praktika.
 % Verze pro: LaTeX
 % Verze hlavicky: 22. 2. 2007
 % Autor: Ustav fyziky kondenzovanych latek
@@ -133,108 +132,145 @@ $\varphi=\the\vlhkost$~\%
 
 \section{Úvod}
 
-    \paragraph{} Cílem toho měření je zjistit hustotu válečku s válcovým výřezem. 
-    Hustota má být vypočtena pomocí měření jeho výšky, vnitřního a vnějšího průměru, a
-    jeho hmotnosti.
-
-    \paragraph{} Objem válečku určím pomocí změřené výšky $h$, vnitřního poloměru $r$ a
-    vnějšího poloměr $R$ pomocí rovnice
-
-    $$V = h \pi (R^{2} - r^{2})$$
-
-    \paragraph{} Pak se změřenou hmotností $m$ lze určit hustota válečku jako
-
-    $$\rho = \frac{m}{h \pi (R^{2} - r^{2})}$$
-
-    \subsection{Zpracování chyb měření}
-
-        \paragraph{} Nejistotu měření určím ze \textit{Zákona šíření nejistoty} jako
-
-        $$u(\rho) = \sqrt{
-          \left(\frac{\partial \rho}{\partial m}\right)^{2} \cdot u(m)^{2}
-        + \left(\frac{\partial \rho}{\partial r}\right)^{2} \cdot u(r)^{2} 
-        + \left(\frac{\partial \rho}{\partial R}\right)^{2} \cdot u(R)^{2}
-        + \left(\frac{\partial \rho}{\partial h}\right)^{2} \cdot u(h)^{2}
-        }$$
-
-        konkrétně potom
-
-        $$u(\rho) = \sqrt{
-              \left(\frac{u(m)}{h \pi \left(R^{2} - r^{2}\right)}\right)^{2}
-            + \left(\frac{2mr \cdot u(R)}{h \pi \left(R^{2} - r^{2}\right)^{2}}\right)^{2}
-            + \left(\frac{2mR \cdot u(r)}{h \pi \left(R^{2} - r^{2}\right)^{2}}\right)^{2}
-            + \left(\frac{m \cdot u(h)}{h^{2} \pi \left(R^{2} - r^{2}\right)}\right)^{2}
-        }$$
+    \paragraph{} Cílem toho měření je
+    
+    \begin{enumerate}
+        \item zjistit odpor rezistoru pomocí měření napětí a proudu a s použitím Ohmova zákona.
+        \item změřit volampérovou charakteristiku žárovky
+    \end{enumerate}
 
 \section{Postup měření}
 
-    \paragraph{} Pomocí posuvného měřidla jsme nejdříve změřili vnitřní průměr $2r$ a vnější průměr
-    válečku $2R$. Poté jsme pomocí mikrometru změřili výšku válečku $h$ a nakonec pomocí laboratorních vah jsme
-    určili hmotnost válečku $m$.
+    \subsection{Metoda A}
+
+        \paragraph{} U metody A je změřeným napětí $U$ správné napětí na rezistoru, ale 
+        měřený proud je roven součtu proudu $I_{R}$, takoucího rezistorem, a $I_{A}$,
+        který protéká ampérmetrem. Pro hledaný odpor platí
+
+        \begin{equation} 
+            R = \frac{U}{I_{A} - \frac{U}{R_{V}}}
+        \end{equation}
+
+        kde $R_{V}$ je odpor voltmetru.
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.6\textwidth]{metoda_a.png}
+            \caption{Schéma k metodě A}
+            \label{fig:method_a}
+        \end{figure}
+
+    \subsection{Metoda B}
+
+        \paragraph{} Při zapojení metodou B měříme správný proud $I_{A}$, který se shoduje
+        s proudem na rezistoru, ale zato změřené napětí je dáno součtem napětí na ampérmetru
+        a rezistoru. Zde pro hledanou hodnotu odporu platí
+
+        \begin{equation}
+            R = \frac{U_{V} - R_{A} I_{A}}{I_{A}}
+        \end{equation}
+
+        kde $R_{A}$ je odpor ampérmetru.
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.6\textwidth]{metoda_b.png}
+            \caption{Schéma k metodě B}
+            \label{fig:method_b}
+        \end{figure}
+
+    \subsection{Měření voltampérové charakteristiky žárovky}
+
+        \paragraph{} Nakonec měření voltampérové charakteristiky žárovky provádíme
+        pomocí zapojení A a postupně měříme dvojici (napětí [$mA$], proud [$V$]), přičemž 
+        napětí na zdroji volíme v rozmezí od $U = 0V$ do $U = 20V$. 
 
 \section{Výsledky}
 
-    \subsection{Měření průměrů válce}
+    \paragraph{} Velikost odporu ampérmetru při rozsahu do $400 mA$ činí
 
-    \begin{center}
-        \begin{tabular}{ | l | l || l | l | }
-            \hline
-            $2R$ $[cm]$ & $R$ $[cm]$ & $2r$ $[cm]$ & $r$ $[cm]$ \\ \hline
-            3.992 & 1.996 & 1.008 & 0.504 \\ \hline
-            3.992 & 1.996 & 1.008 & 0.504 \\ \hline
-            3.990 & 1.995 & 0.996 & 0.498 \\ \hline
-            3.992 & 1.996 & 1.006 & 0.502 \\ \hline
-            3.990 & 1.995 & 1.008 & 0.504 \\ \hline
-            3.992 & 1.996 & 1.002 & 0.501 \\ \hline
-            3.992 & 1.996 & 1.006 & 0.503 \\ \hline
-            3.992 & 1.996 & 1.000 & 0.500 \\ \hline
-            3.992 & 1.996 & 1.008 & 0.504 \\ \hline
-            3.994 & 1.997 & 1.010 & 0.505 \\
-            \hline
-        \end{tabular}
-    \end{center}
+    \begin{equation}
+        R_{A} = 1.165 \Omega
+    \end{equation}
 
-    \subsection{Měření výšky válce}
+    a odpor volmetru je
 
-    \begin{center}
-        \begin{tabular}{ | l | }
-            \hline
-            $h$ $[cm]$ \\ \hline
-            1.534 \\ \hline
-            1.530 \\ \hline
-            1.528 \\ \hline
-            1.524 \\ \hline
-            1.552 \\ \hline
-            1.546 \\ \hline
-            1.548 \\ \hline
-            1.548 \\ \hline
-            1.554 \\ \hline
-            1.550 \\
-            \hline
-        \end{tabular}
-    \end{center}
+    \begin{equation}
+        R_{V} = 11.1 M\Omega
+    \end{equation}
 
-    $$\overline{m} = 159.096g$$
+    \subsection{Metoda A}
 
-    \paragraph{} Průměrné hodnoty naměřených veličin a jejich nejistoty jsou následující:
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{ | l || l | l || l | }
+                \hline
+                        & $U$ $[V]$ & $I$ $[mA]$             & $R$ $[\Omega]$    \\ \hline
+                $R_{1A}$ & $20.51$   & $199.2$               & $102.9628 \pm 0.07$         \\ \hline
+                $R_{2A}$ & $20.92$   & $21.7 \cdot 10^{-3}$  & $1055749.0339 \pm 0.7$      \\
+                \hline
+            \end{tabular}
+            \caption{Měření odporů metodou A}
+            \label{fig:method_b}
+        \end{table}
 
-    $$m = (159.096 \pm 0.001)g$$
-    $$r = (0.503 \pm 0.001)cm$$
-    $$R = (1.996 \pm 0.001)cm$$
-    $$h = (1.541 \pm 0.004)cm$$
+        \paragraph{} Nepřesnost měření je podle principu šíření nejistot
 
-    \paragraph{} Po dosazení je výsledná hustota
+        \begin{equation}
+            u(R_{A}) = \frac{\sqrt{I^{2} u^{2}(U) + U^{2} u^{2}(I)}}{(I - \frac{U}{R_{V}})^{2}}
+        \end{equation}
 
-    $$\rho = \left(8.81 \pm 0.02 \right) g \cdot cm^{-3}$$
+        \paragraph{}
 
-\section{Zhodnocení měření, závěr}
+    \subsection{Metoda B}
 
-    \paragraph{} Podle zjištěné hustoty byl neznámý materiál pravděpodobně \textbf{mosaz}, jehož tabulková
-    hodnota hustoty se pohybuje v rozmezí $8.4 - 8.7$ $g \cdot cm^{-3}$. Odchylka od této hodnoty bude 
-    pravděpodobně způsobena nedokonalým tvarem, o kterém se předpokládalo, že se jedná o válec. Měření by
-    bylo možné zlepšit přímým měřením objemu, ponořením do kapaliny a měřením jejího objemu v odměrném válci.
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{ | l || l | l || l | }
+                \hline
+                        & $U$ $[V]$ & $I$ $[mA]$             & $R$ $[\Omega]$     \\ \hline
+                $R_{1B}$ & $23.01$   & $208.5$               & $109.19 \pm 0.07$  \\ \hline
+                $R_{2B}$ & $19.92$   & $19.9 \cdot 10^{-3}$  & $1000904.9 \pm 0.7$\\
+                \hline
+            \end{tabular}
+            \caption{Měření odporů metodou A}
+            \label{fig:method_b}
+        \end{table}
 
-\end{document}
+        \paragraph{} Zde je nepřesnost měření podle principu šíření nejistot
 
+        \begin{equation}
+            u(R_{B}) = \frac{\sqrt{I^{2} u^{2}(U) + U^{2} u^{2}(I)}}{I^{2}}
+        \end{equation}
+
+    \subsection{Měření voltampérové charakteristiky žárovky}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.8\textwidth]{zarovka1.png}
+            \caption{Voltapmérová charakteristika žárovky}
+            \label{fig:zarovka}
+        \end{figure}
+
+        \paragraph{}
+
+    \section{Zhodnocení měření, závěr}
+
+    \paragraph{} 
+
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{ | l | l | }
+                \hline
+                         & $R$                  \\ \hline
+                $R_{1A}$ & 102.9628             \\ \hline
+                $R_{2A}$ & 1055749.0339         \\ \hline
+                $R_{1B}$ & 109.1947             \\ \hline
+                $R_{2B}$ & 1000904.9251         \\
+                \hline
+            \end{tabular}
+            \caption{Měření odporů metodou A}
+            \label{fig:method_b}
+        \end{table}
 \end{document}
 
